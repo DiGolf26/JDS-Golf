@@ -10,7 +10,8 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -18,7 +19,6 @@ background:#111;
 color:white;
 }
 
-/* MOVING TOP BANNER */
 .top-banner{
 background:#00c8ff;
 padding:14px;
@@ -35,7 +35,6 @@ animation:slide 18s linear infinite;
 100%{text-indent:-100%;}
 }
 
-/* HEADER */
 header{
 text-align:center;
 padding:35px 20px;
@@ -58,11 +57,13 @@ margin-top:8px;
 font-size:18px;
 }
 
-/* NAV */
 nav{
 text-align:center;
 padding:18px;
 background:#1a1a1a;
+position:sticky;
+top:0;
+z-index:99;
 }
 
 nav a{
@@ -77,11 +78,10 @@ nav a:hover{
 color:#00c8ff;
 }
 
-/* HERO */
 .hero{
 text-align:center;
-padding:70px 20px;
-background:linear-gradient(135deg,#111,#222);
+padding:80px 20px;
+background:#222;
 }
 
 .hero h1{
@@ -92,33 +92,31 @@ margin-bottom:15px;
 .hero p{
 font-size:24px;
 color:#ddd;
-margin-bottom:25px;
 }
 
-.hero a{
-background:#00c8ff;
-padding:16px 34px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-font-size:20px;
-}
-
-/* FEATURES */
-.features{
+.features,
+.gallery,
+.quote,
+.contact{
 padding:70px 8%;
-background:#fff;
+}
+
+.features{
+background:white;
 color:#111;
 }
 
-.features h2{
+.features h2,
+.gallery h2,
+.quote h2,
+.contact h2{
 text-align:center;
 font-size:48px;
 margin-bottom:35px;
 }
 
-.feature-grid{
+.feature-grid,
+.gallery-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
@@ -133,22 +131,8 @@ font-weight:bold;
 border-radius:12px;
 }
 
-/* GALLERY */
 .gallery{
-padding:70px 6%;
 background:#1b1b1b;
-}
-
-.gallery h2{
-text-align:center;
-font-size:52px;
-margin-bottom:35px;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
 }
 
 .gallery-grid img{
@@ -158,16 +142,9 @@ object-fit:cover;
 border-radius:12px;
 }
 
-/* QUOTE FORM */
 .quote{
-padding:70px 20px;
 text-align:center;
 background:#111;
-}
-
-.quote h2{
-font-size:48px;
-margin-bottom:25px;
 }
 
 .quote input,
@@ -191,30 +168,9 @@ border-radius:10px;
 cursor:pointer;
 }
 
-/* FACEBOOK */
-.social{
-text-align:center;
-padding:50px 20px;
-background:#1877f2;
-}
-
-.social a{
-color:white;
-text-decoration:none;
-font-size:28px;
-font-weight:bold;
-}
-
-/* CONTACT */
 .contact{
 text-align:center;
-padding:60px 20px;
 background:black;
-}
-
-.contact h2{
-font-size:44px;
-margin-bottom:20px;
 }
 
 .contact p{
@@ -222,7 +178,6 @@ font-size:22px;
 margin:8px 0;
 }
 
-/* MOBILE */
 @media(max-width:900px){
 
 .feature-grid,
@@ -258,19 +213,19 @@ width:90%;
 </header>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Gallery</a>
-<a href="#">Features</a>
-<a href="#">Quote</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#features">Features</a>
+<a href="#quote">Quote</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<section class="hero">
+<section id="home" class="hero">
 <h1>Build Your Dream Cart</h1>
 <p>Custom Club Car golf carts built your way.</p>
 </section>
 
-<section class="features">
+<section id="features" class="features">
 <h2>Features</h2>
 
 <div class="feature-grid">
@@ -286,7 +241,7 @@ width:90%;
 </div>
 </section>
 
-<section class="gallery">
+<section id="gallery" class="gallery">
 <h2>Gallery</h2>
 
 <div class="gallery-grid">
@@ -302,24 +257,23 @@ width:90%;
 </div>
 </section>
 
-<section class="quote">
+<section id="quote" class="quote">
 <h2>Request A Quote</h2>
 
-<form>
-<input type="text" placeholder="Your Name"><br>
-<input type="text" placeholder="Phone Number"><br>
-<textarea rows="5" placeholder="Tell us what kind of cart you want"></textarea><br>
+<form action="mailto:pgaousley@yahoo.com" method="post" enctype="text/plain">
+
+<input type="text" name="Name" placeholder="Your Name" required><br>
+
+<input type="text" name="Phone" placeholder="Phone Number" required><br>
+
+<textarea name="Build Request" rows="5" placeholder="Tell us what kind of cart you want"></textarea><br>
+
 <button type="submit">Send Request</button>
+
 </form>
 </section>
 
-<section class="social">
-<a href="https://www.facebook.com/" target="_blank">
-Sarah Ousley On Facebook Marketplace
-</a>
-</section>
-
-<section class="contact">
+<section id="contact" class="contact">
 <h2>Contact</h2>
 <p>📞 574-870-1794</p>
 <p>📧 pgaousley@yahoo.com</p>
