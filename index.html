@@ -69,7 +69,7 @@ z-index:99;
 nav a{
 color:white;
 text-decoration:none;
-margin:0 18px;
+margin:0 16px;
 font-weight:bold;
 font-size:18px;
 }
@@ -78,9 +78,17 @@ nav a:hover{
 color:#00c8ff;
 }
 
+.hero,
+.features,
+.gallery,
+.quote,
+.social,
+.contact{
+padding:70px 8%;
+}
+
 .hero{
 text-align:center;
-padding:80px 20px;
 background:#222;
 }
 
@@ -94,13 +102,6 @@ font-size:24px;
 color:#ddd;
 }
 
-.features,
-.gallery,
-.quote,
-.contact{
-padding:70px 8%;
-}
-
 .features{
 background:white;
 color:#111;
@@ -109,6 +110,7 @@ color:#111;
 .features h2,
 .gallery h2,
 .quote h2,
+.social h2,
 .contact h2{
 text-align:center;
 font-size:48px;
@@ -168,6 +170,27 @@ border-radius:10px;
 cursor:pointer;
 }
 
+.social{
+text-align:center;
+background:#1877f2;
+}
+
+.social p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.social a{
+background:white;
+color:#1877f2;
+padding:16px 34px;
+text-decoration:none;
+border-radius:10px;
+font-size:22px;
+font-weight:bold;
+display:inline-block;
+}
+
 .contact{
 text-align:center;
 background:black;
@@ -197,6 +220,11 @@ font-size:50px;
 .quote textarea{
 width:90%;
 }
+
+nav a{
+display:block;
+margin:10px 0;
+}
 }
 </style>
 </head>
@@ -217,6 +245,7 @@ width:90%;
 <a href="#gallery">Gallery</a>
 <a href="#features">Features</a>
 <a href="#quote">Quote</a>
+<a href="#facebook">Facebook</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -261,16 +290,20 @@ width:90%;
 <h2>Request A Quote</h2>
 
 <form action="mailto:pgaousley@yahoo.com" method="post" enctype="text/plain">
-
 <input type="text" name="Name" placeholder="Your Name" required><br>
-
 <input type="text" name="Phone" placeholder="Phone Number" required><br>
-
 <textarea name="Build Request" rows="5" placeholder="Tell us what kind of cart you want"></textarea><br>
-
 <button type="submit">Send Request</button>
-
 </form>
+</section>
+
+<section id="facebook" class="social">
+<h2>Facebook Marketplace</h2>
+<p>See available carts and message us directly.</p>
+
+<a href="https://www.facebook.com/share/1DyX4QNzHf/?mibextid=wwXIfr" target="_blank">
+Open Facebook Marketplace
+</a>
 </section>
 
 <section id="contact" class="contact">
@@ -279,10 +312,6 @@ width:90%;
 <p>📧 pgaousley@yahoo.com</p>
 <p>📍 Delphi, IN</p>
 </section>
-<section class="social">
-<a href="https://www.facebook.com/share/1DyX4QNzHf/?mibextid=wwXIfr" target="_blank">
-Visit Our Facebook Marketplace
-</a>
-</section>
+
 </body>
 </html>
