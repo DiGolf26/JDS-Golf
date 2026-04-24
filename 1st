@@ -1,0 +1,106 @@
+const cartImages = [
+  "/mnt/data/IMG_7317.jpg",
+  "/mnt/data/IMG_7315.jpg",
+  "/mnt/data/IMG_6954.jpg",
+  "/mnt/data/IMG_3618.jpg",
+  "/mnt/data/IMG_3205.jpg",
+  "/mnt/data/IMG_1750.jpg",
+  "/mnt/data/IMG_0732.jpg",
+  "/mnt/data/IMG_0073.jpg",
+  "/mnt/data/IMG_0058.jpg"
+]
+
+export default function JDSWebsite(){
+  return (
+    <div className="min-h-screen bg-zinc-100 text-white font-sans">
+      <div className="bg-cyan-600 text-white">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex flex-wrap justify-between gap-4 text-sm md:text-base font-bold">
+          <span>☎ 574-870-1794</span>
+          <span>✉ pgaousley@yahoo.com</span>
+          <span>📍 Delphi, IN</span>
+        </div>
+      </div>
+
+      <header className="bg-black border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row gap-5 justify-between items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-black italic tracking-tight">
+              <span className="text-white">JDS</span> <span className="text-cyan-500">GOLF</span>
+            </h1>
+            <p className="text-sm md:text-base font-black tracking-widest text-white border-t-2 border-cyan-500 pt-1">CLUB CAR GOLF CARTS</p>
+          </div>
+          <nav className="flex flex-wrap justify-center gap-6 text-sm md:text-base font-black uppercase">
+            <a href="#home" className="hover:text-cyan-400">Home</a>
+            <a href="#gallery" className="text-cyan-400">Gallery</a>
+            <a href="#builds" className="hover:text-cyan-400">Builds</a>
+            <a href="#features" className="hover:text-cyan-400">Features</a>
+            <a href="#contact" className="hover:text-cyan-400">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="home" className="bg-zinc-950 text-center px-6 py-16 border-b-4 border-cyan-500">
+        <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight">Gallery</h2>
+        <div className="flex items-center justify-center gap-4 my-4">
+          <div className="h-1 w-28 bg-cyan-500"></div>
+          <span className="text-3xl">🛺</span>
+          <div className="h-1 w-28 bg-cyan-500"></div>
+        </div>
+        <p className="text-xl md:text-2xl text-zinc-200">Custom Club Car Golf Carts Built Your Way</p>
+      </section>
+
+      <section id="gallery" className="max-w-7xl mx-auto px-5 py-8">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {cartImages.map((src, index) => (
+            <div key={src} className="bg-white rounded-xl overflow-hidden shadow-lg border border-zinc-200">
+              <img src={src} alt={`JDS Golf Club Car build ${index + 1}`} className="w-full h-64 object-cover" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="features" className="bg-white text-zinc-900 py-16 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-black uppercase mb-4">Build Features</h2>
+          <p className="text-lg text-zinc-600 mb-10">Options available to make your cart fit your style and needs.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
+            {["Upgraded tires", "Lifted carts", "Headlights", "Taillights", "Turn signals", "Horn", "Rear seat", "Speaker", "Any color", "Custom wheels", "Comfort seats", "Clean finish"].map((feature) => (
+              <div className="rounded-2xl bg-zinc-100 p-5 border-l-4 border-cyan-500 font-bold text-lg">✓ {feature}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="builds" className="bg-zinc-950 text-white py-16 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 text-center">
+          <div className="bg-white/10 rounded-2xl p-8 border border-white/10">
+            <h3 className="text-2xl font-black text-cyan-400 mb-3">Club Car Builds</h3>
+            <p className="text-zinc-300">Clean Club Car examples with custom looks and upgraded details.</p>
+          </div>
+          <div className="bg-white/10 rounded-2xl p-8 border border-white/10">
+            <h3 className="text-2xl font-black text-cyan-400 mb-3">Built Your Way</h3>
+            <p className="text-zinc-300">Pick colors, wheels, seats, speakers, lights, and more.</p>
+          </div>
+          <div className="bg-white/10 rounded-2xl p-8 border border-white/10">
+            <h3 className="text-2xl font-black text-cyan-400 mb-3">Easy Contact</h3>
+            <p className="text-zinc-300">Reach out directly to talk about your cart idea.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-zinc-900 text-white px-6 py-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div className="flex items-center gap-4">
+            <span className="text-4xl">🛺</span>
+            <h2 className="text-2xl md:text-3xl font-black uppercase">Ready to build your <span className="text-cyan-400">dream cart?</span></h2>
+          </div>
+          <p className="text-xl">Contact us today for a custom quote!</p>
+          <a href="tel:5748701794" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-lg font-black text-xl">☎ 574-870-1794</a>
+        </div>
+        <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-zinc-700 text-center text-zinc-300">
+          <p>pgaousley@yahoo.com • Delphi, IN</p>
+        </div>
+      </section>
+    </div>
+  )
+}
